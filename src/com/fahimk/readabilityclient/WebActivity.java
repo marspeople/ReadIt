@@ -62,12 +62,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.*;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -93,6 +88,12 @@ public class WebActivity extends Activity {
 	String title = "";
 	float read_percent = 0;
 	private SQLiteDatabase database;
+        
+        public static final int NOOK_KEY_PREV_LEFT = 92;
+        public static final int NOOK_KEY_NEXT_LEFT = 93;
+
+        public static final int NOOK_KEY_PREV_RIGHT = 94;
+        public static final int NOOK_KEY_NEXT_RIGHT = 95;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -103,8 +104,8 @@ public class WebActivity extends Activity {
 		boolean fullScreen = sharedPreferences.getBoolean("fullScreen", false);
 		if(fullScreen) {
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
-			getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
-					WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//			getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
+//					WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		} else {
 			getWindow().requestFeature(Window.FEATURE_PROGRESS);
 		}
@@ -292,6 +293,26 @@ public class WebActivity extends Activity {
 		}
 	}
 
+        @Override
+        public boolean onKeyDown(int keyCode, KeyEvent event) {
+            switch (keyCode) {
+                case KeyEvent.KEYCODE_VOLUME_UP:
+                case NOOK_KEY_PREV_LEFT:
+                case NOOK_KEY_PREV_RIGHT:
+                    webView.pageUp(false);
+                    webView.pageUp(false);
+                    break;
+                case KeyEvent.KEYCODE_VOLUME_DOWN:
+                case NOOK_KEY_NEXT_LEFT:
+                case NOOK_KEY_NEXT_RIGHT:
+                    webView.pageDown(false);
+                    webView.pageDown(false);
+                    break;
+                default:
+                    return super.onKeyDown(keyCode, event);
+            }
+            return true;
+        }
 
 	private void showShareDialog() {
 		Dialog shareDialog = new Dialog(this);
