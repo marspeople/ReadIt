@@ -212,9 +212,11 @@ public class HelperMethods {
 		
 		//fullHtml = "<head><link rel=\"stylesheet\" href=\"file:///android_asset/mobile2.css\" type=\"text/css\" media=\"all\" charset=\"utf-8\"" + fullHtml;
 		fullHtml = fullHtml + "<script type=\"text/javascript\" src=\"file:///android_asset/jquery.min.js\"></script>";
-		fullHtml = fullHtml.replaceAll("/media/css/mobile.min.css", "file:///android_asset/mobile.css");
+		fullHtml = fullHtml.replaceAll("/media/css/mobile/mobile.css", "file:///android_asset/mobile.css");
+                Log.v("parsehtml",fullHtml);
 		//html = html.replaceAll("//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", "file:///android_asset/jquery.min.js");
 		html = html.replace("</script>", "</script>\n <script type=\"text/javascript\" src=\"file:///android_asset/jquery.min.js\"></script>\n");
+                html = html.replace("</script>", "</script>\n <script type=\"text/javascript\" src=\"file:///android_asset/zepto.ext.min.js\"></script>\n");
 		//c = c.replaceAll("<a href=\"#\" class=\"article-back-link\">", "<a href=\"##\" class=\"article-back-link\">");
 		//Log.e("html", c);
 		return fullHtml;
