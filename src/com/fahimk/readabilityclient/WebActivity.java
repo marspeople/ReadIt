@@ -546,10 +546,11 @@ public class WebActivity extends Activity {
 			Toast message2 = Toast.makeText(WebActivity.this, "Press the menu button to customize text and modify the bookmark.", Toast.LENGTH_LONG);
 			message2.show();
 			view.loadUrl("javascript:(function() { " +  
-					"var readBar = document.getElementById('read-bar'); readBar.parentNode.removeChild(readBar);"+
-					"var footNote = document.getElementById('article-marketing'); footNote.parentNode.removeChild(footNote);"+
-					"var bottom = document.getElementById('article-nav'); bottom.parentNode.removeChild(bottom);" +
-					"})()");  
+					"var readBar = document.getElementById('rdb-header'); readBar.parentNode.removeChild(readBar);"+
+					"var actionBar = document.getElementById('call-to-action'); actionBar.parentNode.removeChild(actionBar);"+
+					"var footer = document.getElementsByTagName('footer');"+
+                                        "for(var i=0;i<footer.length;i++) footer[i].parentNode.removeChild(footer[i]);"+
+					"})()");
 			view.loadUrl("javascript:(function() {" +
 					"$(document).ready(function() {" +
 					"$('body').scrollTop($('body').outerHeight() * " + read_percent + " )" +
