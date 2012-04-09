@@ -543,8 +543,8 @@ public class WebActivity extends Activity {
 
 		@Override
 		public void onPageFinished(WebView view, String url){
-			Toast message2 = Toast.makeText(WebActivity.this, "Press the menu button to customize text and modify the bookmark.", Toast.LENGTH_LONG);
-			message2.show();
+//			Toast message2 = Toast.makeText(WebActivity.this, "Press the menu button to customize text and modify the bookmark.", Toast.LENGTH_LONG);
+//			message2.show();
 			view.loadUrl("javascript:(function() { " +  
 					"var readBar = document.getElementById('rdb-header'); readBar.parentNode.removeChild(readBar);"+
 					"var actionBar = document.getElementById('call-to-action'); actionBar.parentNode.removeChild(actionBar);"+
@@ -606,8 +606,8 @@ public class WebActivity extends Activity {
 				}
 			case MSG_WV_READ_PERCENT:
 				new WebSyncArticles().execute();
-				Toast message4 = Toast.makeText(WebActivity.this, "Read position saved", Toast.LENGTH_LONG);
-				message4.show();
+//				Toast message4 = Toast.makeText(WebActivity.this, "Read position saved", Toast.LENGTH_LONG);
+//				message4.show();
 				break;
 			case MSG_FAIL:
 				if(pDialog.isShowing())
