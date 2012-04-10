@@ -126,7 +126,7 @@ public class WebActivity extends Activity {
 
 				// Return the app name after finish loading
 				if(progress == 100)
-					MyActivity.setTitle("ReadIt");
+					MyActivity.setTitle(title);
 			}
 		});
 
@@ -162,7 +162,7 @@ public class WebActivity extends Activity {
 			}
 		}
 		else {
-			Log.e("content", content);
+//			Log.e("content", content);
 			initializeWV(content);
 		}
 		//Log.e("content", content);
@@ -301,12 +301,14 @@ public class WebActivity extends Activity {
                 case NOOK_KEY_PREV_RIGHT:
                     webView.pageUp(false);
                     webView.pageUp(false);
+                    webView.scrollBy(0, 20);
                     break;
                 case KeyEvent.KEYCODE_VOLUME_DOWN:
                 case NOOK_KEY_NEXT_LEFT:
                 case NOOK_KEY_NEXT_RIGHT:
                     webView.pageDown(false);
                     webView.pageDown(false);
+                    webView.scrollBy(0, -20);
                     break;
                 default:
                     return super.onKeyDown(keyCode, event);
