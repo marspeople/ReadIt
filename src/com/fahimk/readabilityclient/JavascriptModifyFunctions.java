@@ -15,7 +15,7 @@ public class JavascriptModifyFunctions {
 	final static int TYPE_SIZE = 1;
 	final static int TYPE_STYLE = 2;
 
-	static int[] currentTypesSelected = {2,2,0};
+	static int[] currentTypesSelected = {3,3,0};
 	static String[] mobileStyles = {"Newspaper","Novel", "eBook","Inverse","Athelas"};
 	static String[] mobileSizes = {"x-small","small", "medium","large","x-large"};
 	static String[] mobileCols = {"x-narrow","narrow","medium","wide","x-wide"};
