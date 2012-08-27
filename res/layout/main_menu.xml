@@ -4,7 +4,7 @@
 	android:background="#E7E6E2" android:layout_width="fill_parent">
 	<RelativeLayout android:padding="12dp"
 		android:layout_width="fill_parent" android:layout_height="wrap_content">
-		<Button android:id="@+id/button_readnow" android:text="Read!"
+		<Button android:id="@+id/button_readnow" android:text="@string/read"
 			android:layout_alignParentRight="true" android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 		</Button>
@@ -19,7 +19,7 @@
 		android:layout_width="fill_parent" android:gravity="center"
 		android:layout_height="wrap_content" android:typeface="serif"
 		android:textColor="#62605D"
-		android:text="or authorize your readability account to access the features below" />
+		android:text="@string/authorize" />
 	<TableLayout android:gravity="center_horizontal"
 		android:layout_width="fill_parent" android:layout_height="fill_parent">
 		<TableRow android:padding="12dp">
@@ -29,7 +29,7 @@
 				<ImageView android:id="@+id/button_bookmarks"
 					android:layout_width="wrap_content" android:layout_height="wrap_content"
 					android:adjustViewBounds="true" android:src="@drawable/icon_read2" />
-				<TextView android:text="Bookmarks" android:layout_width="wrap_content"
+				<TextView android:text="@string/bookmarks" android:layout_width="wrap_content"
 					android:textColor="#62605D" android:layout_height="wrap_content" />
 			</LinearLayout>
 			<LinearLayout android:gravity="center"
@@ -38,7 +38,7 @@
 				<ImageView android:id="@+id/button_add"
 					android:layout_width="wrap_content" android:layout_height="wrap_content"
 					android:adjustViewBounds="true" android:src="@drawable/icon_add" />
-				<TextView android:text="Add" android:layout_width="wrap_content"
+				<TextView android:text="@string/add" android:layout_width="wrap_content"
 					android:textColor="#62605D" android:layout_height="wrap_content" />
 			</LinearLayout>
 
@@ -50,7 +50,7 @@
 				<ImageView android:id="@+id/button_sync"
 					android:layout_width="wrap_content" android:layout_height="wrap_content"
 					android:adjustViewBounds="true" android:src="@drawable/icon_sync" />
-				<TextView android:text="Sync" android:layout_width="wrap_content"
+				<TextView android:text="@string/sync" android:layout_width="wrap_content"
 					android:textColor="#62605D" android:layout_height="wrap_content" />
 			</LinearLayout>
 			<LinearLayout android:gravity="center"
@@ -59,7 +59,7 @@
 				<ImageView android:id="@+id/button_help"
 					android:layout_width="wrap_content" android:layout_height="wrap_content"
 					android:adjustViewBounds="true" android:src="@drawable/icon_help" />
-				<TextView android:text="Help" android:layout_width="wrap_content"
+				<TextView android:text="@string/help" android:layout_width="wrap_content"
 					android:textColor="#62605D" android:layout_height="wrap_content" />
 			</LinearLayout>
 		</TableRow>
@@ -70,7 +70,7 @@
 				<ImageView android:id="@+id/button_settings"
 					android:layout_width="wrap_content" android:layout_height="wrap_content"
 					android:adjustViewBounds="true" android:src="@drawable/icon_auth" />
-				<TextView android:id="@+id/text_settings" android:text="Settings"
+				<TextView android:id="@+id/text_settings" android:text="@string/settings"
 					android:textColor="#62605D" android:layout_width="wrap_content" android:layout_height="wrap_content" />
 			</LinearLayout>
 			<LinearLayout android:gravity="center"
@@ -79,15 +79,15 @@
 				<ImageView android:id="@+id/button_exit"
 					android:layout_width="wrap_content" android:layout_height="wrap_content"
 					android:adjustViewBounds="true" android:src="@drawable/icon_exit" />
-				<TextView android:text="Exit" android:layout_width="wrap_content"
+				<TextView android:text="@string/exit" android:layout_width="wrap_content"
 					android:textColor="#62605D" android:layout_height="wrap_content" />
 			</LinearLayout>
 		</TableRow>
 		<TableRow>
-			<Button android:text="Clear Database" android:id="@+id/button_delete"
+			<Button android:text="@string/clear_database" android:id="@+id/button_delete"
 				android:layout_weight="1" android:layout_width="0dip"
 				android:layout_height="wrap_content" />
-			<Button android:text="Authorize" android:id="@+id/button_authorize"
+			<Button android:text="@string/authorize" android:id="@+id/button_authorize"
 				android:layout_weight="1" android:layout_width="0dip"
 				android:layout_height="wrap_content" />
 		</TableRow>
