@@ -317,49 +317,16 @@ public class WebActivity extends Activity {
         }
 
 	private void showShareDialog() {
-		Dialog shareDialog = new Dialog(this);
-		shareDialog.setContentView(R.layout.dialog_share);
-		shareDialog.setTitle("Share this article.");
-		shareDialog.setCanceledOnTouchOutside(true);
-		shareDialog.show();
+		Intent send = new Intent(Intent.ACTION_SEND);
 
-		ImageButton twitterButton = (ImageButton) shareDialog.findViewById(R.id.button_share_twitter);
-		ImageButton faceButton = (ImageButton) shareDialog.findViewById(R.id.button_share_facebook);
-		ImageButton emailButton = (ImageButton) shareDialog.findViewById(R.id.button_share_email);
-
+		send.setType("text/plain");
+		send.putExtra(Intent.EXTRA_TEXT, "http://www.readability.com/articles/" + url);
+		send.putExtra(Intent.EXTRA_SUBJECT, title);
 		try {
-			if(title != null) {
-				title = URLEncoder.encode(title,"UTF-8");
-			}
-			else {
-				title = URLEncoder.encode(webView.getTitle(),"UTF-8");
-			}
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} 
-		twitterButton.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://twitter.com/intent/tweet?text=" + title + "&url=http%3A%2F%2Frdd.me%2F" + url + "&via=readability"));
-				startActivity(browserIntent);
-			}
-		});
-
-		faceButton.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.readability.com%2Farticles%2F" + url));
-				startActivity(browserIntent);
-			}
-		});
-
-		emailButton.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://www.readability.com/articles/" + url + "/email"));
-				startActivity(browserIntent);
-			}
-		});
+			startActivity(Intent.createChooser(send, "Share article"));
+		} catch(android.content.ActivityNotFoundException ex) {
+			// if no app handles it, do nothing
+		}
 	}
 
 	private void updateReadPercent() {

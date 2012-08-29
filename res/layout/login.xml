@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
-	<Button android:id="@+id/button_login" android:text="Connect Readability Account" android:layout_width="fill_parent"
+	<Button android:id="@+id/button_login" android:text="@string/connect_account" android:layout_width="fill_parent"
     android:layout_height="wrap_content"/>
    	<RelativeLayout android:layout_width="fill_parent"
 		android:layout_height="wrap_content">
-		<Button android:id="@+id/searchButton" android:text="Read!"
+		<Button android:id="@+id/searchButton" android:text="@string/read"
 			android:layout_alignParentRight="true" android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 		</Button>
